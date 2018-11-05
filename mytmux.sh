@@ -28,7 +28,8 @@ function kill_session(){
 }
 
 function new_window(){
-    # only creates a new window if we're not at the first window (window 0)
+    # if there's currently no session create one and use that window,
+    # otherwise just create a new window
     winname=$1
     if [[ -z ${FIRST_WINDOW} ]] ; then
         FIRST_WINDOW="true"
