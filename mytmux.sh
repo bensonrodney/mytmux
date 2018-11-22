@@ -50,6 +50,20 @@ function open_repo(){
     tmux send-keys "cd ${repopath}" C-m
 }
 
+function side_by_side(){
+    winname=$1
+    new_window "${winname}"
+    tmux split-window -h -t 0
+    tmux select-pane -t 0
+}
+
+function above_below(){
+    winname=$1
+    new_window "${winname}"
+    tmux split-window -v -t 0
+    tmux select-pane -t 0
+}
+
 function triple_window(){
     # two panes above a full width one
     winname=$1
